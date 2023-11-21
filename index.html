@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>THE MANCHESTER UNITED SQUAD</title>
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="coverflow.css" />
+    <link rel="stylesheet" href="Mystyle.css" />
+
+    <!-- External Scripts -->
+    <script src="jquery.min.js"></script>
+    <script src="sly.min.js"></script>
+    <script src="coverflow.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Initialize Sly for scrolling
+            var $frame = $('#coverflow1');
+            var $wrap = $frame.parent();
+
+            $frame.sly({
+                horizontal: 1,
+                itemNav: 'forceCentered',
+                smart: 1,
+                activateMiddle: 1,
+                activateOn: 'click',
+                mouseDragging: 1,
+                touchDragging: 1,
+                releaseSwing: 1,
+                startAt: 1,
+                scrollBar: $wrap.find('.scrollbar'),
+                scrollBy: 1,
+                speed: 300,
+                elasticBounds: 1,
+                easing: 'swing',
+                dragHandle: 1,
+                dynamicHandle: 1,
+                clickBar: 1,
+                // Navigation buttons
+                pagesBar: $wrap.find('.pages'),
+                activatePageOn: 'click'
+            });
+
+            // Add smooth scrolling for internal links
+            $('a[href^="#"]').on('click', function (e) {
+                e.preventDefault();
+
+                var target = this.hash;
+                var $target = $(target);
+
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top
+                }, 900, 'swing', function () {
+                    window.location.hash = target;
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap" id="coverflow1">
+        <div class="scrollbar">
+            <div class="handle">
+                <div class="mousearea"></div>
+            </div>
+        </div>
+
+        <div class="frame coverflow">
+            <ul class="clearfix">
+                <li><img src="/img1.jpg" alt=""></li>
+                <li><img src="/img2.jpeg" alt=""></li>
+                <li><img src="/img3.webp" alt=""></li>
+                <!-- Add more list items with images for cover flow -->
+            </ul>
+        </div>
+
+        <ul class="pages"></ul>
+    </div>
+
+    <div>
+        <img align="right" src="utd.png"><br><br><p><br>
+
+        <hr width="1000">
+        <a href="auto.html">Home</a> | <a href="aboutus.html">About Us</a> | <a href="buyourmerch.html"> Buy Our MerCH </a> | <hr width="1000">
+        
+        <h1> THE RED DEVILS</h1>
+        <p>
+            <ul class="navbar">
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Buy Our Merch</li>
+            </ul>
+
+            <table border="5">
+                <!-- Add more rows with car information -->
+                <tr>
+                    <td><img src="/img4.webp" alt=""></td>
+                    <td><img src="/img5.webp" alt=""></td>
+                    <td><img src="/img6.webp" alt=""></td>
+                </tr>
+                <!-- Add more rows with car information -->
+            </table>
+
+            <p>Our offices are located at the Stretford end , Manchester, street, M13</p>
+        </div>
+    </div>
+</body>
+
+</html>
